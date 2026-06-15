@@ -1,0 +1,6 @@
+{
+  "name": "Sociazy Thank You Page",
+  "description": "Standalone professional thank you page for Sociazy, with trustworthy styling, details about WhatsApp reachouts, meeting coordinates, and WhatsApp community CTA integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
