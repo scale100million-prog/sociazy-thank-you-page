@@ -8,19 +8,6 @@ declare global {
 }
 
 export default function App() {
-  const handleCommunityClick = () => {
-    // Fire Meta Pixel Lead event
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      try {
-        (window as any).fbq("track", "Lead");
-      } catch (err) {
-        console.error("Meta Pixel Tracking Error:", err);
-      }
-    }
-    // Redirect to the WhatsApp group in a new tab
-    window.open("https://chat.whatsapp.com/GXZQ2Ueqlj7G9KOWT4Rnmn?mode=gi_t", "_blank");
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-slate-50/50 font-sans antialiased text-slate-800">
       
@@ -47,7 +34,7 @@ export default function App() {
       </header>
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-3xl mx-auto px-4 pt-8 pb-48 sm:pt-12 sm:pb-32 md:py-16 md:pb-44 w-full flex flex-col items-center">
+      <main className="flex-1 max-w-3xl mx-auto px-4 pt-8 pb-16 sm:pt-12 sm:pb-20 md:py-16 md:pb-24 w-full flex flex-col items-center">
         
         {/* Animated Checkmark Emblem */}
         <motion.div 
@@ -81,7 +68,7 @@ export default function App() {
           className="text-center max-w-2xl mb-6 sm:mb-12"
         >
           <p className="text-sm sm:text-lg text-slate-600 leading-[1.5] sm:leading-relaxed px-3 sm:px-0">
-            Welcome to Sociazy! <span className="inline-block animate-wiggle">🎉</span> You have just taken the first step towards turning your tenant and owner conversations into a fully automated WhatsApp system that captures every lead, follows up on time, and stops your team from losing money on missed messages.
+            Welcome to Sociazy! <span className="inline-block animate-wiggle">🎉</span> You have just taken the first step towards putting your portal inquiries, arrears notices, and tradie follow-ups on autopilot, so your rent roll can grow without your payroll growing with it.
           </p>
         </motion.div>
 
@@ -131,7 +118,7 @@ export default function App() {
                   <PhoneCall className="w-5 h-5 text-emerald-500" />
                 </div>
                 <p className="text-slate-700 text-sm sm:text-base font-medium">
-                  Our team will reach out to you on WhatsApp before the call to confirm your slot. Be ready at your scheduled time.
+                  Our team will reach out to you before the call to confirm your slot. Be ready at your scheduled time.
                 </p>
               </div>
             </div>
@@ -153,8 +140,9 @@ export default function App() {
                     Before the call, keep handy:
                   </p>
                   <ul className="list-disc list-inside space-y-1.5 text-slate-600 text-xs sm:text-sm pl-2 font-normal">
-                    <li>The number of properties you currently manage.</li>
-                    <li>How you handle tenant and owner messages today.</li>
+                    <li>The number of doors you currently manage.</li>
+                    <li>The software your rent roll runs on, such as PropertyMe, PropertyTree, or Console Cloud.</li>
+                    <li>How your team handles portal inquiries, arrears, and tradie jobs today.</li>
                   </ul>
                   <p className="text-slate-400 text-xs mt-3 italic font-normal">
                     This will help us show you exactly where your agency is leaking time and money.
@@ -172,29 +160,6 @@ export default function App() {
         </p>
 
       </main>
-
-      {/* STICKY FOOTER CTA - WhatsApp Green (#25D366) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-slate-200/80 shadow-[0_-10px_25px_-5px_rgba(0,0,0,0.05)] py-4 px-4 sm:px-6">
-        <div className="max-w-md mx-auto">
-          <button
-            id="whatsapp-community-cta"
-            onClick={handleCommunityClick}
-            className="w-full h-14 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-emerald-300 text-white font-sans font-bold text-base sm:text-lg rounded-xl flex items-center justify-center gap-3 shadow-md shadow-emerald-500/20 transition-all cursor-pointer"
-          >
-            {/* Tailored WhatsApp Custom SVG Icon matching exact WhatsApp green styling */}
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              viewBox="0 0 24 24" 
-              fill="currentColor" 
-              className="w-6 h-6 flex-shrink-0"
-            >
-              <path fillRule="evenodd" d="M1.5 12c0-5.799 4.701-10.5 10.5-10.5S22.5 6.201 22.5 12s-4.701 10.5-10.5 10.5a10.457 10.457 0 0 1-5.118-1.326L1.5 22.5l1.326-5.382A10.457 10.457 0 0 1 1.5 12Zm10.5-9a9 9 0 0 0-9 9c0 1.636.438 3.169 1.203 4.496l-.782 3.181 3.181-.782A8.957 8.957 0 0 0 12 21a9 9 0 1 0 0-18Z" clipRule="evenodd" />
-              <path fillRule="evenodd" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-            </svg>
-            Join Our WhatsApp Community
-          </button>
-        </div>
-      </div>
 
     </div>
   );
